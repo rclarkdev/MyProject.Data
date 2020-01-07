@@ -1,0 +1,1 @@
+Visual Studio template for promo code landing pages.
