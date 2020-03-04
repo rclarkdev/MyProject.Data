@@ -3,6 +3,7 @@ using MyProject.Data.Context;
 using MyProject.Data.Models;
 using MyProject.Data.Repository;
 using Microsoft.EntityFrameworkCore;
+using System.Threading.Tasks;
 
 namespace MyProject.Data.Services
 {
@@ -20,9 +21,9 @@ namespace MyProject.Data.Services
         {
             _dbContext = new MyProjectDbContext();
         }
-        public void Commit()
+        public async Task Commit()
         {
-            _dbContext.SaveChanges();
+            await _dbContext.SaveChangesAsync();
         }
         public void Dispose()
         {

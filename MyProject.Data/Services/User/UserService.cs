@@ -1,6 +1,8 @@
 ﻿using System.Linq;
 using MyProject.Data.Models;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace MyProject.Data.Services
 {
@@ -12,32 +14,32 @@ namespace MyProject.Data.Services
         {
             _unitOfWork = new UnitOfWork();
         }
-        public void Insert(User user)
+        public async Task Insert(User user)
         {
             _unitOfWork.UserRepository.Add(user);
-            _unitOfWork.Commit();
+            await _unitOfWork.Commit();
         }
 
-        public void Update()
+        public async Task Update()
         {
-            _unitOfWork.UserRepository.SaveChange();
+            await _unitOfWork.UserRepository.SaveChangeAsync();
         }
 
-        public void Delete(User user)
+        public async Task Delete(User user)
         {
             _unitOfWork.UserRepository.Remove(user);
-            _unitOfWork.Commit();
+            await _unitOfWork.Commit();
         }
 
-        public IEnumerable<User> GetAll()
+        public async Task<List<User>> GetAll()
         {
-            return _unitOfWork.UserRepository.Query();
+            return await _unitOfWork.UserRepository.Query().ToListAsync();
         }
 
-        public User GetById(long id)
+        public async Task<User> GetById(long id)
         {
-            return _unitOfWork.UserRepository.Query()
-                .FirstOrDefault(/*o => o.Id == id*/);
+            return await _unitOfWork.UserRepository.Query()
+                .FirstOrDefaultAsync(/*o => o.Id == id*/);
         }
     }
 }

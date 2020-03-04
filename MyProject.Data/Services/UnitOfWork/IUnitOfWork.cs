@@ -4,6 +4,7 @@ using System.Text;
 using MyProject.Data.Models;
 using MyProject.Data.Repository;
 using Microsoft.EntityFrameworkCore;
+using System.Threading.Tasks;
 
 namespace MyProject.Data.Services
 {
@@ -14,11 +15,10 @@ namespace MyProject.Data.Services
         /// <summary>
         /// Commits all changes
         /// </summary>
-        void Commit();
+        Task Commit();
         /// <summary>
         /// Discards all changes that has not been commited
         /// </summary>
         void RejectChanges();
-        void Dispose();
     }
 }

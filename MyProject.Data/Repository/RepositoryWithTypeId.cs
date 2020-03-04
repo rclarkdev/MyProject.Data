@@ -5,6 +5,7 @@ using System.Text;
 using MyProject.Data.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
+using System.Threading.Tasks;
 
 namespace MyProject.Data.Repository
 {
@@ -30,9 +31,9 @@ namespace MyProject.Data.Repository
             return Context.Database.BeginTransaction();
         }
 
-        public void SaveChange()
+        public async Task SaveChangeAsync()
         {
-            Context.SaveChanges();
+            await Context.SaveChangesAsync();
         }
 
         public IQueryable<T> Query()

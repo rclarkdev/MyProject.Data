@@ -1,14 +1,15 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using MyProject.Data.Models;
 
 namespace MyProject.Data.Services
 {
     public interface IUserService
     {
-        void Insert(User user);
-        void Update();
-        void Delete(User user);
-        IEnumerable<User> GetAll();
-        User GetById(long id);
+        Task Insert(User user);
+        Task Update();
+        Task Delete(User user);
+        Task<List<User>> GetAll();
+        Task<User> GetById(long id);
     }
 }

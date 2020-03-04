@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using MyProject.Data.Models;
 using Microsoft.EntityFrameworkCore.Storage;
+using System.Threading.Tasks;
 
 namespace MyProject.Data.Repository
 {
@@ -12,7 +13,7 @@ namespace MyProject.Data.Repository
 
         IDbContextTransaction BeginTransaction();
 
-        void SaveChange();
+        Task SaveChangeAsync();
 
         void Remove(T entity);
     }
