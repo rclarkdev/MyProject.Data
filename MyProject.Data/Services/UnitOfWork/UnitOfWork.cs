@@ -4,7 +4,7 @@ using MyProject.Data.Models;
 using MyProject.Data.Repository;
 using Microsoft.EntityFrameworkCore;
 
-namespace MyProject.Data.UnitOfWork
+namespace MyProject.Data.Services
 {
     public class UnitOfWork : IUnitOfWork
     {

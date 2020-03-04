@@ -1,11 +1,6 @@
-﻿using System;
-using System.Data.SqlClient;
-using System.Linq;
+﻿using System.Linq;
 using MyProject.Data.Models;
-using MyProject.Data.UnitOfWork;
-using Microsoft.Extensions.Configuration;
 using System.Collections.Generic;
-using System.Data;
 
 namespace MyProject.Data.Services
 {
@@ -15,7 +10,7 @@ namespace MyProject.Data.Services
 
         public UserService()
         {
-            _unitOfWork = new UnitOfWork.UnitOfWork();
+            _unitOfWork = new UnitOfWork();
         }
         public void Insert(User user)
         {
@@ -34,7 +29,7 @@ namespace MyProject.Data.Services
             _unitOfWork.Commit();
         }
 
-        public IQueryable<User> GetAll()
+        public IEnumerable<User> GetAll()
         {
             return _unitOfWork.UserRepository.Query();
         }

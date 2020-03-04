@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.Extensions.Configuration;
 
-namespace LendmarkLoader.Data.Factories
+namespace LendmarkLoader.Data.Context
 {
     public class MigrationMyProjectDbContextFactory : IDesignTimeDbContextFactory<MyProjectDbContext>
     {
@@ -19,6 +19,7 @@ namespace LendmarkLoader.Data.Factories
 
            // var connectionString = configuration.GetConnectionString("DefaultConnection");
 
+           // If using Posgres
            // builder.UseNpgsql(connectionString);
 
             return new MyProjectDbContext(builder.Options);

@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 using MyProject.Data.Models;
 
 namespace MyProject.Data.Services
@@ -11,7 +8,7 @@ namespace MyProject.Data.Services
         void Insert(User user);
         void Update();
         void Delete(User user);
-        IQueryable<User> GetAll();
+        IEnumerable<User> GetAll();
         User GetById(long id);
     }
 }
