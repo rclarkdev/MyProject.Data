@@ -10,6 +10,9 @@
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
+# Local editor settings
+.vscode/
+
 # Build results
 [Dd]ebug/
 [Dd]ebugPublic/
@@ -186,6 +189,18 @@ _pkginfo.txt
 # Others
 ClientBin/
 ~$*
+
+# Local configuration and secrets
+.env
+.env.*
+!.env.example
+appsettings.*.local.json
+secrets.json
+secrets.*.json
+
+# Operating system files
+.DS_Store
+Thumbs.db
 *~
 *.dbmdl
 *.dbproj.schemaview
@@ -194,6 +209,18 @@ ClientBin/
 *.publishsettings
 node_modules/
 orleans.codegen.cs
+
+# Angular and Ionic generated files
+.angular/
+.ionic/
+.sass-cache/
+.sourcemaps/
+.versions/
+coverage/
+dist/
+platforms/
+plugins/
+www/
 
 # Since there are multiple workflows, uncomment next line to ignore bower_components
 # (https://github.com/github/gitignore/pull/1529#issuecomment-104372622)
